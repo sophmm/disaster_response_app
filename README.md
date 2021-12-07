@@ -40,6 +40,10 @@ with improved prediction performance, due to its weighting of the model outcomes
 More accurate predictions are weighted accordingly to differentiate them from weaker predictions, and so
 over time the model performance increases.
 
+Note there is a very small improvement (~0.01) in the f-score after tuning hyperparameters, and minimal change 
+to the conclusions drawn. There is also a much larger computational time, therefore GridSearchCV is excluded 
+from the pipeline for the app.
+
 <a name="objectives"></a>
 ## Objectives
 
@@ -158,7 +162,7 @@ Looking at what the specific messages are in these categories helps understand w
 If I had more time I would train an NER model to identify key phrases/ words associated with each of these categories, e.g. 'lost' or 'missing' for missing_people or 'safe' for security.
 
 ![alt text](screenshot_of_app.jpeg)
-
+![alt text](screenshot_of_plots.jpeg)
 
 <a name="authors"></a>
 ## Authors

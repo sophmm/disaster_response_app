@@ -162,6 +162,7 @@ Looking at what the specific messages are in these categories helps understand w
 If I had more time I would train an NER model to identify key phrases/ words associated with each of these categories, e.g. 'lost' or 'missing' for missing_people or 'safe' for security.
 
 ![alt text](screenshot_of_app.jpeg)
+
 ![alt text](screenshot_of_plots.jpeg)
 
 <a name="authors"></a>

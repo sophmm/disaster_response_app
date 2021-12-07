@@ -13,6 +13,8 @@ import re
 import nltk
 from nltk.corpus import stopwords
 
+from visualize import return_figures
+
 app = Flask(__name__)
 
 def process_text(text):
@@ -50,33 +52,8 @@ new_order = list(eval_df.sort_values(by='f1_score',ascending=False).iloc[:,1].re
 @app.route('/index')
 
 def index():
-    # extract data needed for visuals
-    # TODO: Below is an example - modify to extract data for your own visuals
-    genre_counts = df.groupby('genre').count()['message']
-    genre_names = list(genre_counts.index)
 
-    # create visuals
-    # TODO: Below is an example - modify to create your own visuals
-    graphs = [
-        {
-            'data': [
-                Bar(
-                    x=genre_names,
-                    y=genre_counts
-                )
-            ],
-
-            'layout': {
-                'title': 'Distribution of Message Genres',
-                'yaxis': {
-                    'title': "Count"
-                },
-                'xaxis': {
-                    'title': "Genre"
-                }
-            }
-        }
-    ]
+    graphs = return_figures(df, eval_df)
 
     # encode plotly graphs in JSON
     ids = ["graph-{}".format(i) for i, _ in enumerate(graphs)]

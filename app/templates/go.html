@@ -14,7 +14,8 @@
             {% for category, classification in classification_result.items() %}
                 {% if classification == 1 %}
                     <li class="list-group-item list-group-item-success text-center">{{category.replace('_', ' ').title()}}</li>
-                    <li><a href="https://github.com/sophmm/">Click for corresponding organisation</a></li>
+                    <li><a href="https://www.dec.org.uk/">Click for corresponding organisation</a></li>
+                    <!-- ideally the organisation link should change for each category but I'm not sure how to do this -->
                 {% else %}
                     <li class="list-group-item list-group-item-dark text-center">{{category.replace('_', ' ').title()}}</li>
                 {% endif %}

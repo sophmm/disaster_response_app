@@ -14,6 +14,7 @@ import nltk
 from nltk.corpus import stopwords
 
 from visualize import return_figures
+from list_of_organisations import return_organisation_links
 
 app = Flask(__name__)
 
@@ -71,10 +72,13 @@ def go():
 
     # use model to predict classification for query
     classification_labels = model.predict([query])[0]
-    #classification labels are the same as y_pred
-    classification_results = dict(zip(new_order, classification_labels))
+    # note classification labels are the same as y_pred (and are in the same order)
 
-    # This will render the go.html Please see that file. 
+    classification_links = return_organisation_links(new_order)
+    classification_results = dict(zip(new_order, zip(classification_labels,
+                                                     classification_links)))
+
+    # This will render the go.html.
     return render_template(
         'go.html',
         query=query,

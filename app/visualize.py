@@ -32,13 +32,13 @@ def return_figures(df, eval_df):
         )
     )
 
-    layout_one = dict(title='Classification confidence (%)',
+    layout_one = dict(title='Classification confidence (%) based on f-score',
                       yaxis=dict(title='%'),
                       )
 
 
     graph_two = []
-    perc_mess = per_of_message_per_cat(df.drop(columns=['message', 'genre','shops','tools']))
+    perc_mess = per_of_message_per_cat(df.drop(columns=['message', 'genre']))
     perc_df = pd.DataFrame(perc_mess, columns=['perc_mess']).sort_values(by='perc_mess', ascending=True)
 
     perc_df.reset_index(inplace=True)

@@ -12,10 +12,10 @@
     <h3 class="text-center">CATEGORY (ordered by classification confidence)</h3>
         <ul class="col-3 list-group">
             {% for category, classification in classification_result.items() %}
-                {% if classification == 1 %}
+                {% if classification[0] == 1 %}
                     <li class="list-group-item list-group-item-success text-center">{{category.replace('_', ' ').title()}}</li>
-                    <li><a href="https://www.dec.org.uk/">Click for corresponding organisation</a></li>
-                    <!-- ideally the organisation link should change for each category but I'm not sure how to do this -->
+                    <li><a href={{classification[1]}}>Click for corresponding disaster organisation</a></li>
+                    <!-- the organisation link changes for each category -->
                 {% else %}
                     <li class="list-group-item list-group-item-dark text-center">{{category.replace('_', ' ').title()}}</li>
                 {% endif %}

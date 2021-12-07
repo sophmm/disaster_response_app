@@ -1,0 +1,26 @@
+{% extends "master.html" %}
+{% block title %}Results{% endblock %}
+
+
+{% block message %}
+    <hr />
+    <!-- <h4 class="text-center">MESSAGE</h4> -->
+    <h5 class="text-center"><i>{{query}}</i></h5>
+{% endblock %}
+
+{% block content %}
+    <h3 class="text-center">CATEGORY (ordered by classification confidence)</h3>
+        <ul class="col-3 list-group">
+            {% for category, classification in classification_result.items() %}
+                {% if classification == 1 %}
+                    <li class="list-group-item list-group-item-success text-center">{{category.replace('_', ' ').title()}}</li>
+                    <li><a href="https://github.com/sophmm/">Click for corresponding organisation</a></li>
+                {% else %}
+                    <li class="list-group-item list-group-item-dark text-center">{{category.replace('_', ' ').title()}}</li>
+                {% endif %}
+            {% endfor %}
+
+        </div>
+    </div>
+
+{% endblock %}

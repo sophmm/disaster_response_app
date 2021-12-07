@@ -40,6 +40,10 @@ with improved prediction performance, due to its weighting of the model outcomes
 More accurate predictions are weighted accordingly to differentiate them from weaker predictions, and so
 over time the model performance increases.
 
+Note there is a very small improvement (~0.01) in the f-score after tuning hyperparameters, and minimal change 
+to the conclusions drawn. There is also a much larger computational time, therefore GridSearchCV is excluded 
+from the pipeline for the app.
+
 <a name="objectives"></a>
 ## Objectives
 

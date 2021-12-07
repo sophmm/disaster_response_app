@@ -68,7 +68,7 @@ The data is composed of pre-labelled tweets & text messages from Figure Eight ww
 ### Clone repository
 
 ```
-git clone https://github.com/sophmm/message_classification_for_disaster_response
+git clone https://github.com/sophmm/Message_Classification_for_Disaster_Response
 ```
 
 <a name="executing"></a>

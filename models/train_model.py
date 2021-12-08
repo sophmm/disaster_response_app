@@ -67,6 +67,19 @@ def create_pipeline():
                 estimator=xgb.XGBClassifier(random_state=42, 
                                             use_label_encoder=False,verbosity = 0)))
             ])
+    
+    parameters = {
+    'clf__estimator__n_estimators': [150, 200],
+    'clf__estimator__max_depth': [3, 4, 5],
+    'clf__estimator__learning_rate': [0.05, 0.1, 0.2],
+#    'clf__estimator__early_stopping_rounds': [5,10],
+    }
+
+    # GridSearchCV takes a long time to run (~1.8hrs) so is commented out:
+    # tuned_classifier = GridSearchCV(pipeline, param_grid=parameters, cv=3, n_jobs=1)
+    # tuned_classifier.best_estimator_ #results: learning_rate=0.1, max_depth=4, n_estimators=200,
+    # pipeline = tuned_classifier
+    
     return pipeline
 
 def evaluate_model(y_test, y_pred):

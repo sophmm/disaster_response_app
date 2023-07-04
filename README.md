@@ -50,6 +50,7 @@ The data is composed of pre-labelled tweets & text messages from Figure Eight ww
 3. Creation of a web application to classify any disaster message.
 
 <a name="getting_started"></a>
+## Getting Started 
 
 1. To run ETL pipeline that cleans data and stores in database
 	

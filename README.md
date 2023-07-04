@@ -8,10 +8,6 @@ messages can be sent to the appropriate disaster relief agency.
 1. [Introduction](#introduction)
 2. [Objectives](#objectives)
 3. [Getting Started](#getting_started)
-    1. [Create Virtual Environment](#env)
-    2. [Installing dependences](#installing)
-    3. [Clone Repository](#clone)
-    4. [Executing Program](#executing)
 4. [File Structure](#files)
 5. [Discussion](#discussion)
     1. [Confidence in results](#confidence-in-results)
@@ -54,30 +50,6 @@ The data is composed of pre-labelled tweets & text messages from Figure Eight ww
 3. Creation of a web application to classify any disaster message.
 
 <a name="getting_started"></a>
-## Getting Started
-
-<a name="env"></a>
-### Create Virtual Environment (Linux)
-
- `$ python3 -m venv disaster_venv`
-
- `$ source disaster_venv/bin/activate`
-
-<a name="installing"></a>
-### Installing dependences
-
-`$ pip install -r requirements.txt`
-
-<a name="clone"></a>
-### Clone repository
-
-```
-git clone https://github.com/sophmm/Message_Classification_for_Disaster_Response
-```
-
-<a name="executing"></a>
-### Executing Program
-Run the following commands in the project's root directory to set up your database and model.
 
 1. To run ETL pipeline that cleans data and stores in database
 	
@@ -89,10 +61,9 @@ Run the following commands in the project's root directory to set up your databa
     `$ python models/train-model.py data/processed/DisasterResponse.db model/classifier.pkl`
 
 	
-3. To run the app, move to the app's directory. 
+3. To run the app
 
-    `$ python run.py`
-
+    `$ python app/run.py`
 
 4. Go to http://0.0.0.0:3001/ (or http://localhost:5000/ depending on your system)
 

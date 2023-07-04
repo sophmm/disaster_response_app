@@ -6,6 +6,8 @@ import time as time
 import re
 import pickle
 import nltk
+nltk.download('punkt')
+nltk.download('stopwords')
 from nltk.corpus import stopwords
 
 from sklearn.pipeline import Pipeline
@@ -141,7 +143,7 @@ def main():
         #This code is needed for the app to display the predicted categories in the correct order:
         ######
         # load evaluation metrics from previous model training
-        eval_df = pickle.load(open('../models/eval_df.pkl', 'rb'))
+        eval_df = pickle.load(open('models/eval_df.pkl', 'rb'))
         # reorder categories by f-score from existing trained model --> so y_pred is in correct order for app display
         new_order = list(eval_df.sort_values(by='f1_score',ascending=False).iloc[:,1].reset_index()['index'])        
         y_train = y_train.reindex(columns=new_order)

@@ -88,7 +88,7 @@ def load_data(df, database_filename):
         database_filename
     """
 
-    engine = create_engine('sqlite:///processed/DisasterResponse.db')
+    engine = create_engine('sqlite:///'+database_filename)
     df.to_sql('DisasterResponse', engine, index=False)
     
     return

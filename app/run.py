@@ -35,14 +35,14 @@ def process_text(text):
     return words
 
 # load data
-engine = create_engine('sqlite:///../data/processed/DisasterResponse.db')
+engine = create_engine('sqlite:///data/processed/DisasterResponse.db')
 df = pd.read_sql_table('DisasterResponse', engine)
 
 # load model
-model = joblib.load("../models/classifier.pkl")
+model = joblib.load("models/classifier.pkl")
 
 # load evaluation metrics
-eval_df = pickle.load(open('../models/eval_df.pkl', 'rb'))
+eval_df = pickle.load(open('models/eval_df.pkl', 'rb'))
 
 # reorder categories by f-score from previously trained model
 # note the reordering of the category column based on the f-score doesn't change over time.

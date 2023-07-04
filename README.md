@@ -93,7 +93,7 @@ message_classification_for_disaster_response
             |-- ML_pipeline_prep.ipynb
       |-- README
       |-- screenshot_of_app.jpeg
-      |-- requirements.txt
+      |-- disaster-env.yml
 ~~~~~~~
 
 <a name="discussion"></a>
